@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "authlogic_wind.gemspec",
      "lib/authlogic_wind.rb",
      "test/authlogic_wind_test.rb",
      "test/test_helper.rb"
