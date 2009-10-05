@@ -6,7 +6,7 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "authlogic_wind"
     gem.summary = %Q{Authlogic plugin for WIND}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.description = %Q{Authlogic plugin for WIND}
     gem.email = "tastyhat@jamesstuart.org"
     gem.homepage = "http://github.com/tastyhat/authlogic_wind"
     gem.authors = ["James Stuart"]
