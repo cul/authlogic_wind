@@ -1,16 +1,10 @@
 module AuthlogicWind
   module Helper
-    def oauth_register_button(options = {})
-      oauth_button('register_with_oauth', options)
-    end
-    
-    def oauth_login_button(options = {})
-      oauth_button('login_with_oauth', options)
-    end
-  
-  private
-    def oauth_button(name, options = {})
-      "<input type='submit' value='#{options[:value]}' name='#{name}' id='user_submit' class='#{options[:class]}'/>"
+    def wind_login_link(session_class, controller_name, options = {})
+      callback = url_for(:only_path => false, :controller => controller_name) + "/create"
+      link_to (options[:name] || "Login"), url_for(:host => session_class.wind_host, :controller => "login", :protocol => "https", :service => session_class.wind_service, :destination => callback)
+
+      
     end
   end
 end

@@ -63,6 +63,11 @@ module AuthlogicWind
       end
       
       
+      def build_callback_url
+        wind_controller.url_for :controller => wind_controller.controller_name, :action => wind_controller.action_name
+      end
+      
+      
       private
         def authenticating_with_wind?
           # Initial request when user presses one of the button helpers
@@ -144,9 +149,6 @@ module AuthlogicWind
           wind_controller.redirect_to wind_controller.url_for(:host => wind_host, :controller => "login", :protocol => "https", :service => wind_service, :destination => build_callback_url)
         end
 
-        def build_callback_url
-          wind_controller.url_for :controller => wind_controller.controller_name, :action => wind_controller.action_name
-        end
 
         def generate_verified_login
           if (ticketid = wind_controller.params[:ticketid])
