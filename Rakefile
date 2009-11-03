@@ -10,6 +10,7 @@ begin
     gem.email = "tastyhat@jamesstuart.org"
     gem.homepage = "http://github.com/tastyhat/authlogic_wind"
     gem.authors = ["James Stuart"]
+    gem.add_dependency "authlogic"
     gem.add_development_dependency "thoughtbot-shoulda"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
