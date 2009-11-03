@@ -24,7 +24,13 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "authlogic_wind.gemspec",
+     "init.rb",
      "lib/authlogic_wind.rb",
+     "lib/authlogic_wind/acts_as_authentic.rb",
+     "lib/authlogic_wind/helper.rb",
+     "lib/authlogic_wind/session.rb",
+     "lib/wind_callback_filter.rb",
+     "rails/init.rb",
      "test/authlogic_wind_test.rb",
      "test/test_helper.rb"
   ]
