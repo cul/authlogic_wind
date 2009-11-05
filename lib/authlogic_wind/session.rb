@@ -62,9 +62,9 @@ module AuthlogicWind
         super(&block)
       end
       
-      
+      #TODO: why is this so hacky?
       def build_callback_url
-        wind_controller.url_for :controller => wind_controller.controller_name, :action => wind_controller.action_name
+        wind_controller.url_for(:controller => wind_controller.controller_name) + "/create"
       end
       
       
@@ -145,8 +145,8 @@ module AuthlogicWind
 
           # Tell our rack callback filter what method the current request is using
           wind_controller.session[:wind_callback_method]      = wind_controller.request.method
-
-          wind_controller.redirect_to wind_controller.url_for(:host => wind_host, :controller => "login", :protocol => "https", :service => wind_service, :destination => build_callback_url)
+          
+          wind_controller.redirect_to "https://#{wind_host}/login?destination=#{CGI.escapeHTML(build_callback_url)}&service=#{CGI.escapeHTML(wind_service)}"
         end
 
 
