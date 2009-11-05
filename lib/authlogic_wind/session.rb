@@ -40,7 +40,7 @@ module AuthlogicWind
       
       alias_method :auto_register=,:auto_register
       
-    end
+          end
     
     
     module Methods
