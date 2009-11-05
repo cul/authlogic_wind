@@ -79,7 +79,6 @@ module AuthlogicWind
       
       private
         def authenticating_with_wind?
-          login_only_with_wind? ||
           # Initial request when user presses one of the button helpers
           (controller.params && !controller.params[:login_with_wind].blank?) ||
           # When the oauth provider responds and we made the initial request
