@@ -40,7 +40,16 @@ module AuthlogicWind
       
       alias_method :auto_register=,:auto_register
       
-          end
+      # Add this in your Session object to Auto Register a new user using openid via sreg
+      def login_only_with_wind(value=nil)
+        rw_config(:login_only_with_wind,value,false)
+      end
+      
+      alias_method :login_only_with_wind=,:login_only_with_wind
+
+
+
+    end
     
     
     module Methods
@@ -70,6 +79,7 @@ module AuthlogicWind
       
       private
         def authenticating_with_wind?
+          login_only_with_wind? ||
           # Initial request when user presses one of the button helpers
           (controller.params && !controller.params[:login_with_wind].blank?) ||
           # When the oauth provider responds and we made the initial request
@@ -122,6 +132,10 @@ module AuthlogicWind
 
         def auto_register?
           self.class.auto_register == true
+        end
+        
+        def login_only_with_wind?
+          self.class.login_only_with_wind == true
         end
         
         def validate_by_wind
