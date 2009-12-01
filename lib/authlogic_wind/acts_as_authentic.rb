@@ -69,7 +69,7 @@ module AuthlogicWind
         # Initial request when user presses one of the button helpers
         (session_class.controller.params && !session_class.controller.params[:login_with_wind].blank?) ||
         # When the oauth provider responds and we made the initial request
-        (wind_response && session_class.controller.session && session_class.controller.session[:wind_request_class] == self.class.name)
+        (defined?(wind_response) && wind_response && session_class.controller.session && session_class.controller.session[:wind_request_class] == self.class.name)
       end
       
       def validate_password_with_wind?
